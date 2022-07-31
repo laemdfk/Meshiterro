@@ -7,6 +7,7 @@ class User < ApplicationRecord
    # アソシエーション設定。1:N の「1」側にあたるモデルに、has_many を記載する必要がある 
    has_many :post_images, dependent: :destroy
    has_many :post_comments, dependent: :destroy
+   has_many :favorites, dependent: :destroy
   
   #profile_image設定 
   has_one_attached :profile_image

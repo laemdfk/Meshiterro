@@ -4,6 +4,10 @@ class PostImage < ApplicationRecord
 
   belongs_to :user
   has_many :post_comments, dependent: :destroy
+  has_many :favorites, dependent: :destroy
+
+# dependent: :destroyは = has_manyで使えるオプション。 1:Nの関係において、「1」のデータが削除された場合、関連する「N」のデータも削除される設定
+# 投稿を削除したら、それに紐づくいいね、コメントも一緒に削除させるもの
 
 
 # 画像が設定されない場合はapp/assets/imagesに格納されている
@@ -16,4 +20,11 @@ class PostImage < ApplicationRecord
     end
     image
  end
+
+# いいねの設定
+# favorited_by? = 引数で渡されたユーザidがFavoritesテーブル内に存在（exists?）するかどうかを調べる
+  def favorited_by?(user)
+    favorites.exists?(user_id: user.id)
+  end
+
 end
