@@ -14,8 +14,9 @@ class PostImagesController < ApplicationController
     end
   end
 
+# kaminari(ページネーション)設定のため、書き換え
   def index
-    @post_images = PostImage.all
+   @post_images = PostImage.page(params[:page]).per(5)
   end
 
   def show
