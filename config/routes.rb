@@ -8,9 +8,9 @@ Rails.application.routes.draw do
    resources :post_comments, only: [:create, :destroy]
    resource :favorite, only: [:create, :destroy]
   end
-  
-  # いいね機能の場合は「1人のユーザーは1つの投稿に対して1回しかいいねできない」という仕様 = idを引数として渡す必要がないのでresourcesは
-  
+
+  # いいね機能の場合は「1人のユーザーは1つの投稿に対して1回しかいいねできない」という仕様 = idを引数として渡す必要がないのでresourcesは用いない
+
    resources :users, only: [:show, :edit, :update]
 
 
