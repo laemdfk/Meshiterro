@@ -1,2 +1,13 @@
-<h1>Homes#top</h1>
-<p>Find me in app/views/homes/top.html.erb</p>
+<div class="col-md-6 mx-auto mt-5">
+  <h1>welcome to <strong>Meshiterro</strong>  !!</h1>
+  <p>In  <span class="glyphicon glyphicon-book"></span><strong>Meshiterro</strong>, </p>
+  <p>SNS community that indiscriminately stimulates the appetite of sensible citizens.</p>
+  <div class="row">
+   <p class="ml-3">
+     <%= link_to "Log_in",new_user_session_path, class: "btn btn-primary" %>
+   </p>
+   <p class="ml-3">
+     <%= link_to "Sign_up",new_user_registration_path, class: "btn btn-success" %>
+     </p>
+  </div>
+</div>
