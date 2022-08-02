@@ -12,8 +12,11 @@ Rails.start()
 Turbolinks.start()
 ActiveStorage.start()
 
-// bootstrap挿入に伴い
+// bootstrap挿入に伴い追加
 import "jquery";
 import "popper.js";
 import "bootstrap";
 import "../stylesheets/application" 
+
+// FontAwesome導入に伴い追加
+import '@fortawesome/fontawesome-free/js/all'
