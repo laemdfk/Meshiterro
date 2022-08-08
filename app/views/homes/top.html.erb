@@ -3,6 +3,9 @@
   <p>In  <span class="glyphicon glyphicon-book"></span><strong>Meshiterro</strong>, </p>
   <p>SNS community that indiscriminately stimulates the appetite of sensible citizens.</p>
   <div class="row">
+    <p class="ml-3">
+        <%= link_to 'ゲストログイン（閲覧用）', users_guest_sign_in_path, class: "btn btn-secondary", method: :post %>
+    </p>
    <p class="ml-3">
      <%= link_to "Log_in",new_user_session_path, class: "btn btn-primary" %>
    </p>

@@ -5,6 +5,11 @@ class UsersController < ApplicationController
   end
 
   def edit
+    if User.guest == current_user
+      redirect_to post_images_path, flash: {alert: "ゲストユーザーは編集できません"}
+      return
+    end
+
     @user = User.find(params[:id])
   end
 
